@@ -23,14 +23,17 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      - name: Add BIFT_VER environment property
+        run: echo "BIFT_VER=$(git log -1 --date=format:'%y%m%d' --format='%ad-%h')" >> $GITHUB_ENV
+
       - name: Building a binary
-        run: gfortran -march=native -O3 --static bift.f -o bift-linux
+        run: gfortran -march=native -O3 --static bift.f -o bift-${BIFT_VER}-linux
 
       - name: Provide the binary on a always updating single release page on GitHub
         uses: softprops/action-gh-release@v1
         with:
           tag_name: latest
-          files: bift-linux
+          files: bift-${BIFT_VER}-linux
 
   build-windows:
     # The type of runner that the job will run on
@@ -41,14 +44,17 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      - name: Add BIFT_VER environment property
+        run: echo "BIFT_VER=$(git log -1 --date=format:'%y%m%d' --format='%ad-%h')" >> $GITHUB_ENV
+
       - name: Building a binary
-        run: C:\msys64\msys2_shell.cmd -mingw64 -defterm -here -full-path -no-start -shell bash -c "x86_64-w64-mingw32-gfortran -march=native -O3 --static bift.f -o bift-windows.exe"
+        run: C:\msys64\msys2_shell.cmd -mingw64 -defterm -here -full-path -no-start -shell bash -c "x86_64-w64-mingw32-gfortran -march=native -O3 --static bift.f -o bift-${BIFT_VER}-windows.exe"
 
       - name: Provide the binary on a always updating single release page on GitHub
         uses: softprops/action-gh-release@v1
         with:
           tag_name: latest
-          files: bift-windows.exe
+          files: bift-${BIFT_VER}-windows.exe
 
   build-macos:
     # The type of runner that the job will run on
@@ -59,6 +65,9 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      - name: Add BIFT_VER environment property
+        run: echo "BIFT_VER=$(git log -1 --date=format:'%y%m%d' --format='%ad-%h')" >> $GITHUB_ENV
+
       - name: Building the code
         run: gfortran-10 -march=native -O3 -c bift.f
 
@@ -67,10 +76,10 @@ jobs:
           GCC_PATH="$(dirname $(gfortran-10 -print-libgcc-file-name))/../../.."
           clang -Wl,-no_compact_unwind \
             $(find $GCC_PATH -name libgfortran.a -or -name libgcc.a -or -name libquadmath.a) \
-            bift.o -o bift-macos
+            bift.o -o bift-${BIFT_VER}-macos
 
       - name: Provide the binary on a always updating single release page on GitHub
         uses: softprops/action-gh-release@v1
         with:
           tag_name: latest
-          files: bift-macos
+          files: bift-${BIFT_VER}-macos
