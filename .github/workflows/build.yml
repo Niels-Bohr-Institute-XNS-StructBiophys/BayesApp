@@ -54,7 +54,7 @@ jobs:
         run: C:\msys64\msys2_shell.cmd -mingw64 -defterm -here -full-path -no-start -shell bash -c "x86_64-w64-mingw32-gfortran -march=native -O3 --static bift.f -o bift-${BIFT_VER}-windows.exe"
 
       - name: Show directory contents
-        run: ls -l
+        run: dir
 
       - name: Provide the binary on a always updating single release page on GitHub
         uses: softprops/action-gh-release@v1
