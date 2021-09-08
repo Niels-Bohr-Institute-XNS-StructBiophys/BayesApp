@@ -62,12 +62,15 @@ jobs:
       - name: Building the code
         run: gfortran-10 -march=native -O3 -c bift.f
 
+      - name: Show libaries location
+        run: gfortran-10 -print-libgcc-file-name
+
       - name: Testing if static libs are found
-        run: find /usr/local/lib/gcc/10 -name libgfortran.a -or -name libgcc.a -or -name libquadmath.a
+        run: find "$(realpath $(dirname $(gfortran-10 -print-libgcc-file-name))/../../../)" -name libgfortran.a -or -name libgcc.a -or -name libquadmath.a
 
       - name: Linking to a binary
         run: |
-          GCC_PATH=/usr/local/lib/gcc/10
+          GCC_PATH="$(realpath $(dirname $(gfortran-10 -print-libgcc-file-name))/../../../)"
           clang -Wl,-no_compact_unwind \
             $(find $GCC_PATH -name libgfortran.a -or -name libgcc.a -or -name libquadmath.a) \
             bift.o -o bift-macos
