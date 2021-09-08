@@ -41,12 +41,8 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: Installing a Fortran compiler in MinGW64 environment first
-        run: |
-          C:\msys64\msys2_shell.cmd -mingw64 -defterm -here -full-path -no-start -shell bash -c "pacman -S --noconfirm --needed mingw-w64-x86_64-gcc-fortran"
-
       - name: Building a binary
-        run: gfortran -march=native -O3 --static bift.f -o bift-windows.exe
+        run: C:\msys64\msys2_shell.cmd -mingw64 -defterm -here -full-path -no-start -shell bash -c "x86_64-w64-mingw32-gfortran -march=native -O3 --static bift.f -o bift-windows.exe"
 
       - name: Provide the binary on a always updating single release page on GitHub
         uses: softprops/action-gh-release@v1
