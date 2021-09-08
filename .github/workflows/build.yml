@@ -42,7 +42,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Installing a Fortran compiler first
-        run: pacman -S --noconfirm --needed mingw64/mingw-w64-x86_64-gcc-fortran
+        run: pacman.exe -S --noconfirm --needed mingw64/mingw-w64-x86_64-gcc-fortran
 
       - name: Building a binary
         run: gfortran -march=native -O3 --static bift.f -o bift-windows.exe
