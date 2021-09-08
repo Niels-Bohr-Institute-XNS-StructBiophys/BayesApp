@@ -49,3 +49,23 @@ jobs:
         with:
           tag_name: latest
           files: bift-windows.exe
+
+  build-macos:
+    # The type of runner that the job will run on
+    runs-on: macos-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      - name: Building a binary
+        run: |
+          which gfortran; gfortran --version
+          gfortran -march=native -O3 --static bift.f -o bift-macos
+
+      - name: Provide the binary on a always updating single release page on GitHub
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: latest
+          files: bift-macos
