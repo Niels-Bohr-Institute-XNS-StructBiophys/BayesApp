@@ -29,11 +29,14 @@ jobs:
       - name: Building a binary
         run: gfortran -march=native -O3 --static bift.f -o bift-${BIFT_VER}-linux
 
+      - name: Show directory contents
+        run: ls -l
+
       - name: Provide the binary on a always updating single release page on GitHub
         uses: softprops/action-gh-release@v1
         with:
           tag_name: latest
-          files: bift-${BIFT_VER}-linux
+          files: bift-${{env.BIFT_VER}}-linux
 
   build-windows:
     # The type of runner that the job will run on
@@ -50,11 +53,14 @@ jobs:
       - name: Building a binary
         run: C:\msys64\msys2_shell.cmd -mingw64 -defterm -here -full-path -no-start -shell bash -c "x86_64-w64-mingw32-gfortran -march=native -O3 --static bift.f -o bift-${BIFT_VER}-windows.exe"
 
+      - name: Show directory contents
+        run: ls -l
+
       - name: Provide the binary on a always updating single release page on GitHub
         uses: softprops/action-gh-release@v1
         with:
           tag_name: latest
-          files: bift-${BIFT_VER}-windows.exe
+          files: bift-${{env.BIFT_VER}}-windows.exe
 
   build-macos:
     # The type of runner that the job will run on
@@ -78,8 +84,11 @@ jobs:
             $(find $GCC_PATH -name libgfortran.a -or -name libgcc.a -or -name libquadmath.a) \
             bift.o -o bift-${BIFT_VER}-macos
 
+      - name: Show directory contents
+        run: ls -l
+
       - name: Provide the binary on a always updating single release page on GitHub
         uses: softprops/action-gh-release@v1
         with:
           tag_name: latest
-          files: bift-${BIFT_VER}-macos
+          files: bift-${{env.BIFT_VER}}-macos
