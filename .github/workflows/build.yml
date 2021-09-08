@@ -48,7 +48,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Add BIFT_VER environment property
-        run: echo "BIFT_VER=$(git log -1 --date=format:'%y%m%d' --format='%ad-%h')" >> $GITHUB_ENV
+        run: echo "BIFT_VER=$(git log -1 --date=format:'%y%m%d' --format='%ad-%h')" >> $env:GITHUB_ENV
 
       - name: Building a binary
         run: C:\msys64\msys2_shell.cmd -mingw64 -defterm -here -full-path -no-start -shell bash -c "x86_64-w64-mingw32-gfortran -march=native -O3 --static bift.f -o bift-windows.exe"
