@@ -35,7 +35,7 @@ jobs:
       - name: Provide the binary on a always updating single release page on GitHub
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: latest
+          tag_name: ${{env.BIFT_VER}}
           files: bift-${{env.BIFT_VER}}-linux
 
   build-windows:
@@ -62,7 +62,7 @@ jobs:
       - name: Provide the binary on a always updating single release page on GitHub
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: latest
+          tag_name: ${{env.BIFT_VER}}
           files: bift-${{env.BIFT_VER}}-windows.exe
 
   build-macos:
@@ -93,5 +93,5 @@ jobs:
       - name: Provide the binary on a always updating single release page on GitHub
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: latest
+          tag_name: ${{env.BIFT_VER}}
           files: bift-${{env.BIFT_VER}}-macos
