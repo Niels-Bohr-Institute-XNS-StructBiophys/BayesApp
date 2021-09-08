@@ -41,8 +41,9 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: Installing a Fortran compiler first
-        run: pacman.exe -S --noconfirm --needed mingw64/mingw-w64-x86_64-gcc-fortran
+      - name: Installing a Fortran compiler in MinGW64 environment first
+        run: |
+          C:\msys64\msys2_shell.cmd -mingw64 -defterm -here -full-path -no-start -shell bash -c "pacman -S --noconfirm --needed mingw-w64-x86_64-gcc-fortran"
 
       - name: Building a binary
         run: gfortran -march=native -O3 --static bift.f -o bift-windows.exe
