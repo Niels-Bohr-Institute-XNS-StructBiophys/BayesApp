@@ -24,10 +24,10 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Building a binary
-        run: gfortran -march=native -O3 --static bift.f -o bift
+        run: gfortran -march=native -O3 --static bift.f -o bift-linux
 
       - name: Provide the binary on a always updating single release page on GitHub
         uses: softprops/action-gh-release@v1
         with:
           tag_name: latest
-          files: bift
+          files: bift-linux
