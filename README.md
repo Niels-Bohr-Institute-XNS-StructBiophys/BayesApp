@@ -9,6 +9,13 @@ Written by:              Steen Hansen
 With contributions from: Andreas Haahr Larsen    
                          Martin Cramer Pedersen    
 
+
+
+## file overview
+#### bift.f
+source code (fortran)    
+
+#### 
 1) Compilation (linux):  gfortran -march=native -O3 bift.f -o bift    
                       -march=native may be left out     
                         -m64 or -m32 may be added     
