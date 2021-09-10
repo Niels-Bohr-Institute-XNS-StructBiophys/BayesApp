@@ -46,7 +46,7 @@ line 13: fit constant background       or a blank line   [Y]es or [N]o
 line 14: non-const rescaling           or a blank line   [N]on-constant or [C]onstant    
 line 15: min points per Shannon bin    or a blank line   [integer]    
 
-* use prefix "f" to Fix value, i.e. f22.0 instead of 22.0 for d_max    
+\* use prefix "f" to Fix value, i.e. f22.0 instead of 22.0 for d_max    
   if no prefix is given, the input value is used as initial value in the optimization search    
     
 ** None: fit only alpha and dmax, Moment: fit alpha, d_max and eta, Evidence: fit alpha, dmax, eta and ratio    
