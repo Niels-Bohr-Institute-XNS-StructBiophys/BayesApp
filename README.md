@@ -11,15 +11,21 @@ With contributions from: Andreas Haahr Larsen
 
 
 
-## file overview
+## File overview
+
 #### bift.f
 source code (fortran)    
 
-#### 
+#### .github/workflows
+instructions for compilation on different OS. 
+
+## Instructions for running the program
 1) Compilation (linux):  gfortran -march=native -O3 bift.f -o bift    
-                      -march=native may be left out     
-                        -m64 or -m32 may be added     
-                      ... depending on system    
+                         -march=native may be left out     
+                         -m64 or -m32 may be added     
+                         it may be necessary to include the "-static" flag    
+                         ... depending on system  
+                         
 
 2) Run:                  bift < inputfile.d                        
 
@@ -51,4 +57,3 @@ Only the first line has to be a non blank line
 For further information see the website    
 The program was tested with gfortran 4.4 and it may     
 be necessary to include the "-static" flag.     
-
