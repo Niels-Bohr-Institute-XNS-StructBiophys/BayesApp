@@ -6,8 +6,7 @@ online application at GenApp: https://somo.chem.utk.edu/bayesapp/
 Calculates the pair distance distribution function, p(r), from a SAXS/SANS dataset by a Bayesian indirect Fourier transformation (BIFT) algorithm    
 
 Written by:              Steen Hansen    
-With contributions from: Andreas Haahr Larsen    
-                         Martin Cramer Pedersen    
+With contributions from: Andreas Haahr Larsen, Martin Cramer Pedersen     
 
 
 
