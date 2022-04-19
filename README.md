@@ -34,7 +34,7 @@ line 1:  the name of the data file     - compulsory -    [string]
 line 2:  q_min                         or a blank line   [float]    
 line 3:  q_max                         or a blank line   [float]    
 line 4:  d_max                         or a blank line   [float]*    
-line 5:  eta (non-dilute solutions)    or a blank line   [float]*    
+line 5:  eta (non-dilute solutions)    or a blank line   [float]    
 line 6:  alpha                         or a blank line   [float]*    
 line 7:  smearing constant             or a blank line   [float]    
 line 8:  ratio (non-dilute solutions)  or a blank line   [float]    
