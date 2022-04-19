@@ -34,10 +34,10 @@ line 1:  the name of the data file     - compulsory -    [string]
 line 2:  q_min                         or a blank line   [float]    
 line 3:  q_max                         or a blank line   [float]    
 line 4:  d_max                         or a blank line   [float]*    
-line 5:  eta (non-dilute solutions)    or a blank line   [float]    
+line 5:  eta (non-dilute solutions)    or a blank line   [float]**    
 line 6:  alpha                         or a blank line   [float]*    
 line 7:  smearing constant             or a blank line   [float]    
-line 8:  ratio (non-dilute solutions)  or a blank line   [float]    
+line 8:  ratio (non-dilute solutions)  or a blank line   [float]**    
 line 9:  method (non-dilute solutions) or a blank line   [N]one or [M]oment or [E]vidence**    
 line 10: number of points in p(r)      or a blank line   [integer]    
 line 11: number of extra cal           or a blank line   [integer]    
@@ -49,7 +49,7 @@ line 15: min points per Shannon bin    or a blank line   [integer]
 \* use prefix "f" to Fix value, i.e. f22.0 instead of 22.0 for d_max    
   if no prefix is given, the input value is used as initial value in the optimization search    
     
-** None: fit only alpha and dmax, Moment: fit alpha, d_max and eta, Evidence: fit alpha, dmax, eta and ratio    
+** This part of the code (p(r) for non-dilute scatterers) is not maintained and therefore not part of the GUI. There is no garantee that it is working, so use this option with care and be extra critical when interpreting the results. None: fit only alpha and dmax, Moment: fit alpha, d_max and eta, Evidence: fit alpha, dmax, eta and ratio    
     
 NB NB The input values are the same as at the web site     
 Only the first line has to be a non blank line    
