@@ -42,7 +42,7 @@ line 9:  ratio (non-dilute solutions)  or a blank line   [float]**
 line 10:  method (non-dilute solutions) or a blank line   [N]one or [M]oment or [E]vidence**    
 line 11: number of points in p(r)      or a blank line   [integer]    
 line 12: number of extra cal           or a blank line   [integer]    
-line 13: transformation                or a blank line   [D]ebye (default) or [N]egative or [M]axEnt or [B]essel or [S]ize    
+line 13: transformation                or a blank line   [D]ebye (default) or [N]egative or [M]axEnt    
 line 14: fit constant background       or a blank line   [Y]es or [N]o    
 line 15: non-const rescaling           or a blank line   [N]on-constant or [C]onstant    
 line 16: min points per Shannon bin    or a blank line   [integer]    
