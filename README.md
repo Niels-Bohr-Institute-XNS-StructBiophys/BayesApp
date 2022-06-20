@@ -33,7 +33,7 @@ instructions for compilation on different OS.
 line 1:  the name of the data file     - compulsory -    [string]    
 line 2:  q_min                         or a blank line   [float]    
 line 3:  q_max                         or a blank line   [float]    
-line 4:  nrebin                        or a blank line   [integer]
+line 4:  nrebin                        or a blank line   [integer]    
 line 5:  d_max                         or a blank line   [float]*    
 line 6:  eta (non-dilute solutions)    or a blank line   [float]**    
 line 7:  alpha                         or a blank line   [float]*    
