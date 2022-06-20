@@ -28,23 +28,24 @@ instructions for compilation on different OS.
 
 2) Run:                  bift < inputfile.d                        
 
-3) The file: inputfile.d has to contain the 15 lines:    
+3) The file: inputfile.d has to contain the 16 lines:    
                                                           input format    
 line 1:  the name of the data file     - compulsory -    [string]    
 line 2:  q_min                         or a blank line   [float]    
 line 3:  q_max                         or a blank line   [float]    
-line 4:  d_max                         or a blank line   [float]*    
-line 5:  eta (non-dilute solutions)    or a blank line   [float]**    
-line 6:  alpha                         or a blank line   [float]*    
-line 7:  smearing constant             or a blank line   [float]    
-line 8:  ratio (non-dilute solutions)  or a blank line   [float]**    
-line 9:  method (non-dilute solutions) or a blank line   [N]one or [M]oment or [E]vidence**    
-line 10: number of points in p(r)      or a blank line   [integer]    
-line 11: number of extra cal           or a blank line   [integer]    
-line 12: transformation                or a blank line   [D]ebye (default) or [N]egative or [M]axEnt or [B]essel or [S]ize    
-line 13: fit constant background       or a blank line   [Y]es or [N]o    
-line 14: non-const rescaling           or a blank line   [N]on-constant or [C]onstant    
-line 15: min points per Shannon bin    or a blank line   [integer]    
+line 4:  nrebin                        or a blank line   [integer]
+line 5:  d_max                         or a blank line   [float]*    
+line 6:  eta (non-dilute solutions)    or a blank line   [float]**    
+line 7:  alpha                         or a blank line   [float]*    
+line 8:  smearing constant             or a blank line   [float]    
+line 9:  ratio (non-dilute solutions)  or a blank line   [float]**    
+line 10:  method (non-dilute solutions) or a blank line   [N]one or [M]oment or [E]vidence**    
+line 11: number of points in p(r)      or a blank line   [integer]    
+line 12: number of extra cal           or a blank line   [integer]    
+line 13: transformation                or a blank line   [D]ebye (default) or [N]egative or [M]axEnt or [B]essel or [S]ize    
+line 14: fit constant background       or a blank line   [Y]es or [N]o    
+line 15: non-const rescaling           or a blank line   [N]on-constant or [C]onstant    
+line 16: min points per Shannon bin    or a blank line   [integer]    
 
 \* use prefix "f" to Fix value, i.e. f22.0 instead of 22.0 for d_max    
   if no prefix is given, the input value is used as initial value in the optimization search    
